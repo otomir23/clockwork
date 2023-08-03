@@ -7,7 +7,7 @@ import net.minecraft.client.gui.widget.*
 import net.minecraft.text.Text
 import kotlin.math.roundToLong
 
-class ReconnectionScreen(private val delay: Long) : Screen(Text.translatable("clockwork.reconnecting", delay / 1000L)) {
+class ReconnectionScreen(private val delay: Long) : Screen(Text.translatable("clockwork.reconnecting", delay / 1000.0)) {
     private val grid = GridWidget()
     private lateinit var progressText: TextWidget
     private var timePassed = 0L
@@ -44,6 +44,6 @@ class ReconnectionScreen(private val delay: Long) : Screen(Text.translatable("cl
         renderBackground(context)
         super.render(context, mouseX, mouseY, delta)
         timePassed += (delta * 50).roundToLong()
-        progressText.message = Text.translatable("clockwork.reconnecting.left", (delay - timePassed) / 1000L + 1)
+        progressText.message = Text.translatable("clockwork.reconnecting.left", "%.1f".format(((delay - timePassed) / 1000.0)))
     }
 }
