@@ -1,4 +1,5 @@
 {
   "clockwork.reconnecting": "Reconnecting in %s seconds...",
+  "clockwork.reconnecting.left": "Around %s seconds left",
   "clockwork.reconnect.cancel": "Cancel"
 }

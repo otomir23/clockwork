@@ -1,4 +1,5 @@
 {
   "clockwork.reconnecting": "Переподключение через %s секунд...",
+  "clockwork.reconnecting.left": "Около %s секунд осталось",
   "clockwork.reconnect.cancel": "Отменить"
 }

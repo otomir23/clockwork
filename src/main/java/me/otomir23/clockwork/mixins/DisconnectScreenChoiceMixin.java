@@ -15,7 +15,7 @@ public class DisconnectScreenChoiceMixin {
     private void onDisconnected(CallbackInfo info) {
         Long d = Reconnect.INSTANCE.getDelay();
         if (d != null) {
-            MinecraftClient.getInstance().setScreen(new ReconnectionScreen(d / 1000L));
+            MinecraftClient.getInstance().setScreen(new ReconnectionScreen(d));
         }
     }
 }
