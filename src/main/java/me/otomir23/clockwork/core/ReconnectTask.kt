@@ -10,6 +10,7 @@ class ReconnectTask(private val target: ConnectionState) : TimerTask() {
     override fun run() {
         val c = MinecraftClient.getInstance()
         c.execute {
+            Reconnect.delay = null
             ConnectScreen.connect(
                 MultiplayerScreen(TitleScreen()),
                 c,
