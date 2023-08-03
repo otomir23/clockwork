@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "clockwork",
+  "version": "${version}",
+  "name": "clockwork",
+  "description": "Timed reconnection made easy",
+  "authors": [
+    "otomir23"
+  ],
+  "contact": {
+    "repo": "https://github.com/otomir23/clockwork"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/clockwork/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "me.otomir23.clockwork.ClockworkClient"
+      }
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "fabric-language-kotlin": ">=${flk_version}"
+  }
+}
