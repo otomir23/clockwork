@@ -1,5 +1,10 @@
 {
   "clockwork.reconnecting": "Переподключение через %s секунд...",
   "clockwork.reconnecting.left": "Около %s секунд осталось",
-  "clockwork.reconnect.cancel": "Отменить"
+  "clockwork.reconnect.cancel": "Отменить",
+  "clockwork.commands.already_added": "Это имя занято.",
+  "clockwork.commands.unknown_timing": "Не удалось найти тайминг с таким названием.",
+  "clockwork.commands.invalid_delay": "Задержка должна быть больше или равна нулю.",
+  "clockwork.commands.add.success": "Тайминг успешно создан.",
+  "clockwork.commands.delete.success": "Тайминг успешно удалён."
 }

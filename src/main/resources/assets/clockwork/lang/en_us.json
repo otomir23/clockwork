@@ -1,5 +1,10 @@
 {
   "clockwork.reconnecting": "Reconnecting in %s seconds...",
   "clockwork.reconnecting.left": "Around %s seconds left",
-  "clockwork.reconnect.cancel": "Cancel"
+  "clockwork.reconnect.cancel": "Cancel",
+  "clockwork.commands.already_added": "That name is taken.",
+  "clockwork.commands.unknown_timing": "Can't find timing with that name.",
+  "clockwork.commands.invalid_delay": "Delay must be greater or equal to zero.",
+  "clockwork.commands.add.success": "Successfully created timing.",
+  "clockwork.commands.delete.success": "Successfully deleted timing."
 }

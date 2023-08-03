@@ -6,6 +6,8 @@ import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents
 
 object ClockworkClient : ClientModInitializer {
+    val MOD_ID = "clockwork"
+
     override fun onInitializeClient() {
         ClientPlayConnectionEvents.JOIN.register(Reconnect::onConnect)
         ReconnectCommand.register()
