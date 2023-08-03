@@ -16,8 +16,7 @@ class ReconnectionScreen(delaySeconds: Long) : Screen(Text.translatable("clockwo
         val adder = this.grid.createAdder(1)
         adder.add(TextWidget(title, textRenderer))
         val buttonWidget = ButtonWidget.builder(Text.translatable("clockwork.reconnect.cancel")) { _ ->
-            Reconnect.cancelReconnect()
-            client!!.setScreen(null)
+            close()
         }.build()
         adder.add(buttonWidget)
         this.grid.refreshPositions()
@@ -29,11 +28,14 @@ class ReconnectionScreen(delaySeconds: Long) : Screen(Text.translatable("clockwo
         initTabNavigation()
     }
 
+    override fun close() {
+        Reconnect.cancelReconnect()
+        super.close()
+    }
+
     override fun initTabNavigation() {
         SimplePositioningWidget.setPos(grid, this.navigationFocus)
     }
-
-    override fun shouldCloseOnEsc() = false
 
     override fun render(context: DrawContext, mouseX: Int, mouseY: Int, delta: Float) {
         renderBackground(context)
