@@ -1,12 +1,10 @@
 package me.otomir23.clockwork.screens
 
+import me.otomir23.clockwork.core.Reconnect
 import net.minecraft.client.gui.DrawContext
 import net.minecraft.client.gui.screen.LoadingDisplay
 import net.minecraft.client.gui.screen.Screen
-import net.minecraft.client.gui.widget.ClickableWidget
-import net.minecraft.client.gui.widget.GridWidget
-import net.minecraft.client.gui.widget.SimplePositioningWidget
-import net.minecraft.client.gui.widget.TextWidget
+import net.minecraft.client.gui.widget.*
 import net.minecraft.text.Text
 import net.minecraft.util.Util
 
@@ -17,6 +15,11 @@ class ReconnectionScreen(delaySeconds: Long) : Screen(Text.translatable("clockwo
         this.grid.mainPositioner.alignHorizontalCenter().margin(10)
         val adder = this.grid.createAdder(1)
         adder.add(TextWidget(title, textRenderer))
+        val buttonWidget = ButtonWidget.builder(Text.translatable("clockwork.reconnect.cancel")) { _ ->
+            Reconnect.cancelReconnect()
+            client!!.setScreen(null)
+        }.build()
+        adder.add(buttonWidget)
         this.grid.refreshPositions()
         this.grid.forEachChild { drawableElement: ClickableWidget? ->
             addDrawableChild(

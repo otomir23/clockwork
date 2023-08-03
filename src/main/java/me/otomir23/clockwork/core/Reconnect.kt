@@ -10,7 +10,7 @@ import java.util.*
 
 object Reconnect {
     private var connection: ConnectionState? = null
-    private val timer = Timer()
+    private var timer = Timer()
     var delay: Long? = null
 
     fun onConnect(handler: ClientPlayNetworkHandler, ignoredPacketSender: PacketSender, ignoredMinecraftClient: MinecraftClient) {
@@ -29,5 +29,11 @@ object Reconnect {
             it.connection.disconnect(Text.empty())
             timer.schedule(ReconnectTask(it), delay)
         }
+    }
+
+    fun cancelReconnect() {
+        timer.cancel()
+        timer = Timer()
+        delay = null
     }
 }
