@@ -24,6 +24,7 @@ object Reconnect {
     }
 
     fun scheduleReconnect(delay: Long) {
+        if (delay < 0) return
         connection?.let {
             this.delay = delay
             it.connection.disconnect(Text.empty())

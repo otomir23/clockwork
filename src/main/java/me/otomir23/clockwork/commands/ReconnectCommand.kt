@@ -20,6 +20,7 @@ object ReconnectCommand {
                 argument<String>("name") { name ->
                     argument<Float>("secondsDelay") { delay ->
                         runs {
+                            if (delay() < 0) throw INVALID_DELAY_EXCEPTION.create()
                             if (TimingsManager.create(
                                 Timing(
                                     name(),
