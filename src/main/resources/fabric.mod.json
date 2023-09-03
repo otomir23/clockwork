@@ -10,7 +10,7 @@
   "contact": {
     "repo": "https://github.com/otomir23/clockwork"
   },
-  "license": "All-Rights-Reserved",
+  "license": "MIT",
   "icon": "assets/clockwork/icon.png",
   "environment": "client",
   "entrypoints": {
